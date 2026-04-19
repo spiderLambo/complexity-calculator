@@ -9,13 +9,27 @@ Une extension VS Code qui calcule la complexité de votre code et l'affiche dire
 - Prend en compte les fonctions built-in Python (sorted, sort)
 - Affiche la complexité globale du programme
 
-## Prérequis
+## Installation
 
-Cette extension nécessite le paquet `nerdamer` installé dans votre projet :
+### Option 1 — Installer le fichier `.vsix` (recommandé)
 
+1. Télécharger le fichier `complexity-calculator-0.0.1.vsix`
+2. Dans VS Code : `Ctrl+Shift+P` > `Extensions: Install from VSIX`
+3. Sélectionner le fichier `.vsix`
+
+### Option 2 — Depuis le code source
+
+1. Cloner le dépôt :
 ```bash
-npm install nerdamer
+git clone https://github.com/ton-pseudo/complexity-calculator.git
 ```
+
+2. Installer les dépendances :
+```bash
+npm install
+```
+
+3. Ouvrir le dossier dans VS Code et lancer avec `F5`
 
 ## Utilisation
 
