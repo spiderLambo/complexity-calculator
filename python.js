@@ -10,8 +10,39 @@ class ComplexitePy extends Complexite {
 
   static calcComplex(val) {
     if (val.trim() == "") return "0";
-    if (val.includes("for ") || val.includes("while ")) return "n";
+
     if (val.includes(".sort(") || val.includes("sorted(")) return "nlogn";
+
+    if (
+      val.includes("for ") ||
+      val.includes("while ") ||
+      val.includes("min(") ||
+      val.includes("max(") ||
+      val.includes("sum(") ||
+      val.includes("any(") ||
+      val.includes("all(") ||
+      val.includes("map(") ||
+      val.includes("filter(") ||
+      val.includes("zip(") ||
+      val.includes("enumerate(") ||
+      val.includes("reversed(") ||
+      val.includes(".count(") ||
+      val.includes(".index(") ||
+      val.includes(".reverse(") ||
+      val.includes(".remove(") ||
+      val.includes(".insert(") ||
+      val.includes(".pop(") ||
+      (val.includes("in ") && val.includes(":"))
+    )
+      return "n";
+
+    if (
+      val.includes("bisect(") ||
+      val.includes("bisect_left(") ||
+      val.includes("bisect_right(")
+    )
+      return "logn";
+
     return "1";
   }
 }

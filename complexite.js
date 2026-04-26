@@ -10,7 +10,6 @@ class Complexite {
 
   calcGrandO() {
     const s = nerdamer.expand(this.n.replace(/n\s*logn/g, "logn*n")).toString();
-    console.log("calcGrandO s:", s, "this.n:", this.n);
 
     if (/factorial\([^)]*n[^)]*\)/.test(s)) {
       this.O = "O(n!)";
@@ -71,7 +70,6 @@ class Complexite {
 
   mul(x) {
     let r = new Complexite("", "(" + this.n + ")*(" + x.n + ")");
-    console.log("mul:", this.n, "*", x.n, "=", r.n, "O:", r.O);
     return r;
   }
 

@@ -1,19 +1,17 @@
 const vscode = require("vscode");
 
-function ajoutLigne(document, complex, i, com) {
+async function ajoutLigne(document, complex, i, com) {
   const edit = new vscode.WorkspaceEdit();
-
   const range = new vscode.Range(i, 0, i, document.lineAt(i).text.length);
   edit.replace(
     document.uri,
     range,
     document.lineAt(i).text + ` ${com} → ${complex}`,
   );
-
-  vscode.workspace.applyEdit(edit);
+  await vscode.workspace.applyEdit(edit);
 }
 
-function supprLigne(document, complex, i, com) {
+function supprLigne(document, i, com) {
   const edit = new vscode.WorkspaceEdit();
 
   let ligne = document.lineAt(i).text;

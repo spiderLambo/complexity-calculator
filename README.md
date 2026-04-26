@@ -5,15 +5,17 @@ Une extension VS Code qui calcule la complexité de votre code et l'affiche dire
 ## Fonctionnalités
 
 - Affiche la complexité asymptotique de chaque ligne directement dans l'éditeur
-- Gère les blocs imbriqués (if/else, for, while)
-- Prend en compte les fonctions built-in Python (sorted, sort)
-- Affiche la complexité globale du programme
+- Gère les blocs imbriqués (if/else/elif, for, while, do/while)
+- Prend en compte les fonctions built-in Python (sorted, sort, min, max, sum, bisect, etc.) et C++ (sort, binary_search, lower_bound, etc.)
+- Calcule automatiquement la complexité maximale de chaque bloc et de ses enfants
+- Affiche la complexité globale du programme dans une notification
+- Permet de supprimer les annotations avec la commande **Decommente**
 
 ## Installation
 
 ### Option 1 — Installer le fichier `.vsix` (recommandé)
 
-1. Télécharger le fichier `complexity-calculator-0.0.1.vsix`
+1. Télécharger le fichier `complexity-calculator-0.0.2.vsix`
 2. Dans VS Code : `Ctrl+Shift+P` > `Extensions: Install from VSIX`
 3. Sélectionner le fichier `.vsix`
 
@@ -21,7 +23,7 @@ Une extension VS Code qui calcule la complexité de votre code et l'affiche dire
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/ton-pseudo/complexity-calculator.git
+git clone https://github.com/spiderLambo/complexity-calculator.git
 ```
 
 2. Installer les dépendances :
@@ -66,7 +68,7 @@ else:                       # → O(1) # → O(n)
 | Langage | Support |
 |---------|---------|
 | Python  | ✅      |
-| C++     | 🚧 Bientôt disponible |
+| C++     | ✅      |
 
 ## Limitations théoriques
 
@@ -76,7 +78,6 @@ Cette extension effectue une **analyse statique approximative** — elle analyse
 
 ## Limitations connues
 
-- Seul Python est supporté pour le moment
 - La complexité est calculée de manière statique, pas dynamique
 - Les appels de fonctions récursives ne sont pas détectés
 - Les fonctions définies par l'utilisateur ne sont pas analysées
