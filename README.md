@@ -82,8 +82,4 @@ Cette extension effectue une **analyse statique approximative** — elle analyse
 - Les appels de fonctions récursives ne sont pas détectés
 - Les fonctions définies par l'utilisateur ne sont pas analysées
 
-## Licence
-
-Ce projet est sous licence MIT — vous êtes libre de l'utiliser, le modifier et le redistribuer librement.
-
 Made with ❤️ by Spider Lambo
